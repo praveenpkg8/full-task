@@ -12,19 +12,16 @@ def vowel_count(word):
 
 
 def get_string_values(string_list):
-    splited_string = string_list.split()
-    vowel_list = []
-    constant_list = []
-    for word in splited_string:
+    split_string = string_list.split()
+    vowel_dict = {}
+    constant_dict = {}
+    for word in split_string:
         count = vowel_count(word.lower())
-        vowel_list.append(key_pair(word, count))
-        constant_list.append(key_pair(word, len(word) - count))
+        vowel_dict.update(key_pair(word, count))
+        constant_dict.update(key_pair(word, len(word) - count))
 
-    return vowel_list, constant_list
+    return vowel_dict, constant_dict
 
 
 output = get_string_values(string_list)
 print(output)
-
-
-
